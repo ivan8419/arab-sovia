@@ -52,7 +52,9 @@ export default function SettingsPage() {
               <div className="text-2xl font-bold text-primary mb-2">
                 Duolingo Sov
               </div>
-              <div className="text-muted-foreground font-medium">نسخة 1.0.0</div>
+              <div className="text-muted-foreground font-medium">
+                نسخة 1.0.0
+              </div>
               <div className="text-sm text-muted-foreground mt-2">
                 تطبيق لتعلم تصريف الأفعال العربية مع الضمائر
               </div>

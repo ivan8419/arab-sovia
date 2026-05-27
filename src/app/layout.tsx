@@ -40,9 +40,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="antialiased">
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
         {process.env.NODE_ENV !== 'production' ? (
           <Script id="service-worker-cleanup" strategy="beforeInteractive">
             {`

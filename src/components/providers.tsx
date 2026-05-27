@@ -1,6 +1,12 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from 'react'
 
 type Theme = 'light' | 'dark'
 
@@ -18,9 +24,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     setMounted(true)
     const saved = localStorage.getItem('arabsovia-theme') as Theme | null
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const systemPrefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches
     const initialTheme = saved || (systemPrefersDark ? 'dark' : 'light')
-    
+
     setTheme(initialTheme)
     document.documentElement.classList.toggle('dark', initialTheme === 'dark')
   }, [])

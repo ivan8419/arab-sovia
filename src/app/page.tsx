@@ -61,9 +61,7 @@ export default function Home() {
             <h1 className="text-xl font-bold text-white drop-shadow-md">
               Duolinggo SOV 🌙
             </h1>
-            <p className="text-sm text-white/80">
-              Belajar fi&apos;il + dhomir
-            </p>
+            <p className="text-sm text-white/80">Belajar fi&apos;il + dhomir</p>
           </div>
           <Link
             href="/settings"
@@ -83,17 +81,20 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-72 h-72 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-56 h-56 bg-yellow-400/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
           <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-primary/30 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2" />
-          
+
           <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="space-y-3">
               <p className="text-sm uppercase tracking-[0.2em] font-semibold text-white/90">
                 🎯 Arabic Learning Journey
               </p>
               <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-                Mulai Belajar<br/>Bahasa Arab 🌙
+                Mulai Belajar
+                <br />
+                Bahasa Arab 🌙
               </h2>
               <p className="max-w-xl text-white/80 text-sm md:text-base">
-                Kuasai 60+ fi&apos;il dengan 14 dhomir. belajar seperti bermain game!
+                Kuasai 60+ fi&apos;il dengan 14 dhomir. belajar seperti bermain
+                game!
               </p>
             </div>
             <Link href="/quiz" prefetch={false}>
@@ -115,10 +116,38 @@ export default function Home() {
           className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-8"
         >
           {[
-            { icon: '🔥', value: streak, label: 'Hari Streak', gradient: 'from-orange-500 to-red-500', shadow: 'shadow-orange-500/25', text: 'text-white' },
-            { icon: '⚡', value: xp, label: 'Total XP', gradient: 'from-yellow-400 to-amber-500', shadow: 'shadow-yellow-500/25', text: 'text-white' },
-            { icon: '❤️', value: hearts, label: 'Hearts', gradient: 'from-pink-500 to-rose-500', shadow: 'shadow-pink-500/25', text: 'text-white' },
-            { icon: '📊', value: `${progressPercent}%`, label: 'Mastery', gradient: 'from-emerald-500 to-teal-500', shadow: 'shadow-emerald-500/25', text: 'text-white' },
+            {
+              icon: '🔥',
+              value: streak,
+              label: 'Hari Streak',
+              gradient: 'from-orange-500 to-red-500',
+              shadow: 'shadow-orange-500/25',
+              text: 'text-white',
+            },
+            {
+              icon: '⚡',
+              value: xp,
+              label: 'Total XP',
+              gradient: 'from-yellow-400 to-amber-500',
+              shadow: 'shadow-yellow-500/25',
+              text: 'text-white',
+            },
+            {
+              icon: '❤️',
+              value: hearts,
+              label: 'Hearts',
+              gradient: 'from-pink-500 to-rose-500',
+              shadow: 'shadow-pink-500/25',
+              text: 'text-white',
+            },
+            {
+              icon: '📊',
+              value: `${progressPercent}%`,
+              label: 'Mastery',
+              gradient: 'from-emerald-500 to-teal-500',
+              shadow: 'shadow-emerald-500/25',
+              text: 'text-white',
+            },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -186,10 +215,9 @@ export default function Home() {
                 />
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
-                {dailyGoalPercent >= 100 
-                  ? '🎉 Daily goal tercapai! Keep it up!' 
-                  : `${dailyGoalPercent}% tercapai hari ini`
-                }
+                {dailyGoalPercent >= 100
+                  ? '🎉 Daily goal tercapai! Keep it up!'
+                  : `${dailyGoalPercent}% tercapai hari ini`}
               </p>
             </CardContent>
           </Card>
@@ -197,35 +225,38 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-4">
           {[
-            { 
-              href: '/verbs', 
-              icon: '📖', 
-              title: 'Daftar Fi\'il', 
+            {
+              href: '/verbs',
+              icon: '📖',
+              title: "Daftar Fi'il",
               desc: 'Cari & pelajari 60+ kata kerja Arab',
-              gradient: 'from-purple-100 to-purple-50 dark:from-purple-900/30 dark:to-purple-800/20',
+              gradient:
+                'from-purple-100 to-purple-50 dark:from-purple-900/30 dark:to-purple-800/20',
               border: 'border-purple-200 dark:border-purple-800',
               hoverBorder: 'hover:border-purple-400',
-              text: 'text-purple-700 dark:text-purple-400'
+              text: 'text-purple-700 dark:text-purple-400',
             },
-            { 
-              href: '/quiz', 
-              icon: '✍️', 
-              title: 'Latihan Quiz', 
+            {
+              href: '/quiz',
+              icon: '✍️',
+              title: 'Latihan Quiz',
               desc: '5 jenis latihan konjugasi',
-              gradient: 'from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/20',
+              gradient:
+                'from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/20',
               border: 'border-blue-200 dark:border-blue-800',
               hoverBorder: 'hover:border-blue-400',
-              text: 'text-blue-700 dark:text-blue-400'
+              text: 'text-blue-700 dark:text-blue-400',
             },
-            { 
-              href: '/games', 
-              icon: '🎮', 
-              title: 'Mini Games', 
+            {
+              href: '/games',
+              icon: '🎮',
+              title: 'Mini Games',
               desc: '6 permainan edukatif seru',
-              gradient: 'from-orange-100 to-yellow-50 dark:from-orange-900/30 dark:to-yellow-800/20',
+              gradient:
+                'from-orange-100 to-yellow-50 dark:from-orange-900/30 dark:to-yellow-800/20',
               border: 'border-orange-200 dark:border-orange-800',
               hoverBorder: 'hover:border-orange-400',
-              text: 'text-orange-700 dark:text-orange-400'
+              text: 'text-orange-700 dark:text-orange-400',
             },
           ].map((item, index) => (
             <motion.div
@@ -247,9 +278,7 @@ export default function Home() {
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  {item.desc}
-                </p>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
               </Link>
             </motion.div>
           ))}
@@ -262,7 +291,8 @@ export default function Home() {
           className="mt-8 p-4 rounded-2xl bg-muted/50 dark:bg-slate-800/30 text-center"
         >
           <p className="text-sm text-muted-foreground">
-            💡 <strong>Tips:</strong> Gunakan mode gelap untuk belajar di malam hari
+            💡 <strong>Tips:</strong> Gunakan mode gelap untuk belajar di malam
+            hari
           </p>
         </motion.div>
       </main>

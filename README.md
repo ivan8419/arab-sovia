@@ -87,18 +87,18 @@ Workflow `ci.yml` akan berjalan untuk `push` dan `pull_request` ke `develop`/`ma
 
 ## Available Scripts
 
-| Script                 | Keterangan                        |
-| ---------------------- | --------------------------------- |
-| `pnpm dev`           | Menjalankan development server    |
-| `pnpm build`         | Build production                  |
-| `pnpm start`         | Menjalankan hasil build           |
+| Script               | Keterangan                      |
+| -------------------- | ------------------------------- |
+| `pnpm dev`           | Menjalankan development server  |
+| `pnpm build`         | Build production                |
+| `pnpm start`         | Menjalankan hasil build         |
 | `pnpm lint`          | ESLint untuk `src` dan workflow |
-| `pnpm typecheck`     | TypeScript strict check           |
-| `pnpm test`          | Unit test                         |
-| `pnpm test:ui`       | Vitest UI                         |
-| `pnpm test:coverage` | Coverage report                   |
-| `pnpm format`        | Format semua file                 |
-| `pnpm format:check`  | Validasi format Prettier          |
+| `pnpm typecheck`     | TypeScript strict check         |
+| `pnpm test`          | Unit test                       |
+| `pnpm test:ui`       | Vitest UI                       |
+| `pnpm test:coverage` | Coverage report                 |
+| `pnpm format`        | Format semua file               |
+| `pnpm format:check`  | Validasi format Prettier        |
 
 ## Git Setup Awal
 

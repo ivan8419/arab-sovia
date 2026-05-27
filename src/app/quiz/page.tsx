@@ -348,7 +348,9 @@ function QuizInner() {
                   <div className="font-arabic text-lg font-bold text-gray-800">
                     {verb.madhi}
                   </div>
-                  <div className="text-sm text-muted-foreground">{verb.meaning}</div>
+                  <div className="text-sm text-muted-foreground">
+                    {verb.meaning}
+                  </div>
                 </button>
               ))}
             </div>
