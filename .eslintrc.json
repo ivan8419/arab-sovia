@@ -1,0 +1,11 @@
+{
+  "extends": "next/core-web-vitals",
+  "overrides": [
+    {
+      "files": ["*.css", "*.scss"],
+      "rules": {
+        "at-rule-no-unknown": "off"
+      }
+    }
+  ]
+}

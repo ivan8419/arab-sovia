@@ -1,0 +1,19 @@
+{
+  "name": "Duolingo Sov",
+  "short_name": "DuoSov",
+  "description": "Aplikasi pembelajaran konjugasi kata kerja bahasa Arab",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#58CC02",
+  "theme_color": "#58CC02",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

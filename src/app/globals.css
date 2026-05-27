@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.6%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.6%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.6%;
+    --primary: 96 86% 49%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 262 83% 93%;
+    --secondary-foreground: 222.2 84% 4.6%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.6%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 96 86% 49%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.6%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 8%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 8%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 96 86% 49%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 262 83% 25%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 96 86% 49%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: 'Noto Sans Arabic', sans-serif;
+    direction: rtl;
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ===== Custom Animations ===== */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 8px 2px rgba(88, 204, 2, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 6px rgba(88, 204, 2, 0.8);
+  }
+}
+
+@keyframes fire-burst {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4) rotate(-5deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.35s ease-in-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+.animate-fire-burst {
+  animation: fire-burst 0.4s ease-in-out;
+}
+
+/* ===== Perspective for 3D card flips ===== */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* ===== RTL Arabic font override ===== */
+[dir='rtl'] .font-arabic {
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
