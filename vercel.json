@@ -2,9 +2,6 @@
   "github": {
     "silent": true
   },
-  "install": {
-    "legacyPeerDeps": true
-  },
   "headers": [
     {
       "source": "/sw.js",
