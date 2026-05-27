@@ -207,7 +207,9 @@ export default function RootleGame() {
               autoFocus
               type="text"
               value={currentGuess}
-              onChange={(e) => setCurrentGuess(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setCurrentGuess(e.target.value)
+              }
               onKeyDown={handleKeyDown}
               placeholder="Ketik 4 huruf..."
               dir="rtl"
