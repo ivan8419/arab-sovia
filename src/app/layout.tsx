@@ -68,6 +68,30 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#58CC02" />
         <link rel="apple-touch-icon" href="/icon.svg" />
+        <link rel="canonical" href="https://arab-sovia88.vercel.app" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Arab Sovia - Belajar Kata Kerja Arab',
+              url: 'https://arab-sovia88.vercel.app',
+              description:
+                "Belajar konjugasi kata kerja bahasa Arab (Fi'il) dengan 14 dhomir secara interaktif.",
+              inLanguage: ['id', 'ar'],
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate:
+                    'https://arab-sovia88.vercel.app/verbs?q={search_term_string}',
+                },
+                'query-input': 'required name=search_term_string',
+              },
+            }),
+          }}
+        />
         <Script id="theme-init" strategy="beforeInteractive">
           {`
             try {

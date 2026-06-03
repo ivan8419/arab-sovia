@@ -11,7 +11,6 @@ import {
   getVerbProgress,
   getAllVerbProgress,
 } from '@/lib/db'
-import { Fiil } from '@/types'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { ConjugationTable } from '@/components/learning/conjugation-table'
@@ -19,32 +18,38 @@ import { formatArabicRoot } from '@/lib/utils'
 
 export default function VerbDetailPage() {
   const params = useParams()
-  const [verb, setVerb] = useState<Fiil | null>(null)
-  const [loading, setLoading] = useState(true)
+  const verbId = params.id as string
+  const verb = getVerbById(verbId)
   const { setCurrentVerb, verbProgress, setVerbProgress } = useAppStore()
+  const [status, setStatus] = useState<string>('belum_dipelajari')
 
   useEffect(() => {
-    async function loadData() {
+    if (!verb) return
+
+    setCurrentVerb(verb)
+
+    async function loadProgress() {
       await initializeDb()
-      const verbId = params.id as string
-      const foundVerb = getVerbById(verbId)
-
-      if (foundVerb) {
-        setVerb(foundVerb)
-        setCurrentVerb(foundVerb)
-
-        const progress = await getVerbProgress(verbId)
-        if (!progress) {
-          await updateVerbProgress(verbId, { status: 'sedang_dipelajari' })
-        }
-
-        const allProgress = await getAllVerbProgress()
-        setVerbProgress(allProgress)
+      const progress = await getVerbProgress(verbId)
+      if (!progress) {
+        await updateVerbProgress(verbId, { status: 'sedang_dipelajari' })
       }
-      setLoading(false)
+      const allProgress = await getAllVerbProgress()
+      setVerbProgress(allProgress)
+
+      if (progress?.status) {
+        setStatus(progress.status)
+      }
     }
-    loadData()
-  }, [params.id, setCurrentVerb, setVerbProgress])
+    loadProgress()
+  }, [verbId, verb, setCurrentVerb, setVerbProgress])
+
+  useEffect(() => {
+    const progress = verbProgress.find((p) => p.verbId === verbId)
+    if (progress?.status) {
+      setStatus(progress.status)
+    }
+  }, [verbProgress, verbId])
 
   const playAudio = (text: string) => {
     if ('speechSynthesis' in window) {
@@ -54,8 +59,8 @@ export default function VerbDetailPage() {
     }
   }
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
+  const getStatusColor = (s: string) => {
+    switch (s) {
       case 'dikuasai':
         return 'bg-green-100 text-green-700'
       case 'sedang_dipelajari':
@@ -65,13 +70,7 @@ export default function VerbDetailPage() {
     }
   }
 
-  const getStatus = () => {
-    const progress = verbProgress.find((p) => p.verbId === verb?.id)
-    return progress?.status || 'belum_dipelajari'
-  }
-
   const getStatusLabel = () => {
-    const status = getStatus()
     switch (status) {
       case 'dikuasai':
         return 'متقن'
@@ -82,10 +81,19 @@ export default function VerbDetailPage() {
     }
   }
 
-  if (loading || !verb) {
+  if (!verb) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
-        <div className="text-2xl text-primary font-bold">جاري التحميل...</div>
+        <div className="text-center">
+          <div className="text-6xl mb-4">🔍</div>
+          <h1 className="text-2xl font-bold text-gray-800 mb-2">
+            الفعل غير موجود
+          </h1>
+          <p className="text-muted-foreground mb-4">Verb tidak ditemukan</p>
+          <Link href="/verbs">
+            <Button variant="outline">Kembali ke Daftar</Button>
+          </Link>
+        </div>
       </div>
     )
   }
@@ -110,7 +118,7 @@ export default function VerbDetailPage() {
             <div className="mb-4 flex justify-between items-start">
               <div>
                 <span
-                  className={`text-xs px-3 py-1 rounded-full font-bold ${getStatusColor(getStatus())}`}
+                  className={`text-xs px-3 py-1 rounded-full font-bold ${getStatusColor(status)}`}
                 >
                   {getStatusLabel()}
                 </span>
