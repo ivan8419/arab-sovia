@@ -69,6 +69,10 @@ export default function RootLayout({
         <meta name="theme-color" content="#58CC02" />
         <link rel="apple-touch-icon" href="/icon.svg" />
         <link rel="canonical" href="https://arab-sovia88.vercel.app" />
+        <meta
+          name="google-site-verification"
+          content="_IOv3JoPGLPQxeMl-IWoDcP_VQG_yY-Lk6M_CuBDexs"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
