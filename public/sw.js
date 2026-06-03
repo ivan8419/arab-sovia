@@ -1,4 +1,4 @@
-const CACHE_NAME = 'duolinggo-sov-v2'
+const CACHE_NAME = 'arab-sovia-v2'
 const APP_ASSETS = ['/', '/manifest.json']
 const STATIC_ASSET_PATTERN =
   /\.(?:css|js|png|jpg|jpeg|svg|webp|gif|ico|woff2?)$/i
@@ -18,7 +18,7 @@ self.addEventListener('activate', (event) => {
         Promise.all(
           keys
             .filter(
-              (key) => key.startsWith('duolinggo-sov-') && key !== CACHE_NAME
+              (key) => key.startsWith('arab-sovia-') && key !== CACHE_NAME
             )
             .map((key) => caches.delete(key))
         )

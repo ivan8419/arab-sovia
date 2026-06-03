@@ -1,10 +1,10 @@
 **Prompt Lengkap:**
 
-Buatlah project **Next.js 15 (App Router)** + **TypeScript** + **Tailwind CSS** bernama **duolinggo-sov** dengan konfigurasi berikut:
+Buatlah project **Next.js 15 (App Router)** + **TypeScript** + **Tailwind CSS** bernama **arab-sovia** dengan konfigurasi berikut:
 
 ### Project Setup Awal
 
-- Gunakan **PNPM** sebagai package manager
+- Gunakan **npm** sebagai package manager
 - App Router
 - TypeScript (strict mode)
 - Tailwind CSS + shadcn/ui
@@ -19,12 +19,12 @@ Buatlah project **Next.js 15 (App Router)** + **TypeScript** + **Tailwind CSS** 
 Siapkan project agar siap langsung di-push ke GitHub dengan perintah berikut:
 
 ```bash
-echo "# duolinggo-sov" >> README.md
+echo "# arab-sovia" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/ivan8419/duolinggo-sov.git
+git remote add origin https://github.com/ivan8419/arab-sovia.git
 git push -u origin main
 ```
 
@@ -37,7 +37,7 @@ Buat folder `.github/workflows/` dengan 2 workflow:
   - Prettier check
   - Unit Test (Vitest + React Testing Library)
   - Build production (`next build`)
-  - Cache pnpm
+  - Cache npm
 
 - **`deploy.yml`** (untuk Production)
   - Trigger hanya saat push ke `main`

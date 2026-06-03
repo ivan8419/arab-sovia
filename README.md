@@ -17,19 +17,16 @@ Aplikasi belajar konjugasi kata kerja Arab (fi'il) dan dhomir dengan gaya gamifi
 ### Prasyarat
 
 - Node.js 20 atau lebih baru
-- PNPM 11.1.3
+- npm
 
 ### Setup
 
 ```bash
 git clone https://github.com/ivan8419/arab-sovia.git
-cd ARAB-SOVIA
+cd arab-sovia
 
-corepack enable
-corepack prepare pnpm@11.1.3 --activate
-
-pnpm install
-pnpm dev
+npm install
+npm run dev
 ```
 
 Buka `http://localhost:3000`.
@@ -37,17 +34,17 @@ Buka `http://localhost:3000`.
 ## Menjalankan Test
 
 ```bash
-pnpm lint
-pnpm typecheck
-pnpm test
-pnpm test:coverage
-pnpm build
+npm run lint
+npm run typecheck
+npm run test
+npm run test:coverage
+npm run build
 ```
 
 ## Struktur Folder
 
 ```text
-duolinggo-sov/
+arab-sovia/
 ├── .github/workflows/      # CI dan deploy Vercel
 ├── public/                 # Manifest, service worker, icon PWA
 ├── src/
@@ -71,7 +68,7 @@ duolinggo-sov/
 ### Manual
 
 ```bash
-pnpm dlx vercel@latest
+npx vercel@latest
 ```
 
 ### Via GitHub Actions
@@ -87,18 +84,18 @@ Workflow `ci.yml` akan berjalan untuk `push` dan `pull_request` ke `develop`/`ma
 
 ## Available Scripts
 
-| Script               | Keterangan                      |
-| -------------------- | ------------------------------- |
-| `pnpm dev`           | Menjalankan development server  |
-| `pnpm build`         | Build production                |
-| `pnpm start`         | Menjalankan hasil build         |
-| `pnpm lint`          | ESLint untuk `src` dan workflow |
-| `pnpm typecheck`     | TypeScript strict check         |
-| `pnpm test`          | Unit test                       |
-| `pnpm test:ui`       | Vitest UI                       |
-| `pnpm test:coverage` | Coverage report                 |
-| `pnpm format`        | Format semua file               |
-| `pnpm format:check`  | Validasi format Prettier        |
+| Script                  | Keterangan                      |
+| ----------------------- | ------------------------------- |
+| `npm run dev`           | Menjalankan development server  |
+| `npm run build`         | Build production                |
+| `npm run start`         | Menjalankan hasil build         |
+| `npm run lint`          | ESLint untuk `src` dan workflow |
+| `npm run typecheck`     | TypeScript strict check         |
+| `npm run test`          | Unit test                       |
+| `npm run test:ui`       | Vitest UI                       |
+| `npm run test:coverage` | Coverage report                 |
+| `npm run format`        | Format semua file               |
+| `npm run format:check`  | Validasi format Prettier        |
 
 ## Git Setup Awal
 

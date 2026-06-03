@@ -50,7 +50,7 @@ export default function SettingsPage() {
           <Card className="bg-muted border-none shadow-sm">
             <CardContent className="p-6">
               <div className="text-2xl font-bold text-primary mb-2">
-                Duolingo Sov
+                Arab Sovia
               </div>
               <div className="text-muted-foreground font-medium">
                 نسخة 1.0.0

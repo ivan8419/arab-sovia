@@ -1,0 +1,5 @@
+# https://arab-sovia88.vercel.app/
+User-agent: *
+Allow: /
+
+Sitemap: https://arab-sovia88.vercel.app/sitemap.xml

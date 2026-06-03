@@ -7,14 +7,54 @@ import { ThemeProvider } from '@/components/providers'
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' })
 
+const baseUrl = 'https://arab-sovia88.vercel.app'
+
 export const metadata: Metadata = {
-  title: 'Duolingo Sov - Belajar Kata Kerja Arab',
+  title: {
+    default: 'Arab Sovia - Belajar Kata Kerja Arab',
+    template: '%s | Arab Sovia',
+  },
   description:
-    "Aplikasi pembelajaran konjugasi kata kerja bahasa Arab (Fi'il) dengan dhomir",
+    "Belajar konjugasi kata kerja bahasa Arab (Fi'il) dengan 14 dhomir secara interaktif. Dilengkapi quiz, mini games, dan progress tracker.",
   manifest: '/manifest.json',
   icons: {
     icon: '/icon.svg',
     apple: '/icon.svg',
+  },
+  openGraph: {
+    title: 'Arab Sovia - Belajar Kata Kerja Arab',
+    description:
+      "Belajar konjugasi kata kerja bahasa Arab (Fi'il) dengan 14 dhomir secara interaktif. Dilengkapi quiz, mini games, dan progress tracker.",
+    url: baseUrl,
+    siteName: 'Arab Sovia',
+    locale: 'id_ID',
+    type: 'website',
+    images: [
+      {
+        url: `${baseUrl}/icon.svg`,
+        width: 512,
+        height: 512,
+        alt: 'Arab Sovia',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Arab Sovia - Belajar Kata Kerja Arab',
+    description:
+      "Belajar konjugasi kata kerja bahasa Arab (Fi'il) dengan 14 dhomir secara interaktif.",
+    images: [`${baseUrl}/icon.svg`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
@@ -24,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ar" dir="rtl" className={cn('font-sans', geist.variable)}>
+    <html lang="id" dir="ltr" className={cn('font-sans', geist.variable)}>
       <head>
         <meta name="theme-color" content="#58CC02" />
         <link rel="apple-touch-icon" href="/icon.svg" />

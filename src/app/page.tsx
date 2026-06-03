@@ -59,7 +59,7 @@ export default function Home() {
         <nav className="flex justify-between items-center max-w-4xl mx-auto">
           <div>
             <h1 className="text-xl font-bold text-white drop-shadow-md">
-              Duolinggo SOV 🌙
+              Arab Sovia 🌙
             </h1>
             <p className="text-sm text-white/80">Belajar fi&apos;il + dhomir</p>
           </div>

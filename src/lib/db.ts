@@ -15,7 +15,7 @@ class AppDatabase extends Dexie {
   userStats!: Table<UserStats, string>
 
   constructor() {
-    super('DuolingoSovDB')
+    super('ArabSoviaDB')
     this.version(1).stores({
       verbProgress: 'id, verbId, status',
       userStats: 'id',
